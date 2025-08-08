@@ -9,16 +9,16 @@ const packageItems = [
   {
     icon: Utensils,
     title: "All gourmet meals:",
-    description: "Fri dinner → Mon lunch"
+    description: "All your meals starting from Friday Dinner till Monday Lunch are a taken care of!"
   },
   {
     icon: Clock,
     title: "24/7 event production,",
-    description: "coaching & surprise experiences"
+    description: "4 Day Immersive Experience"
   },
   {
     icon: Trophy,
-    title: "Hotel contribution:",
+    title: "4 Days Booking Charges:",
     description: "₹ 20,000 + 18% GST · non-refundable",
     highlight: true
   }

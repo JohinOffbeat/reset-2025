@@ -46,7 +46,7 @@ export const CTAFinalSection = () => {
               size="lg" 
               className="text-xl px-12 py-8 rounded-full"
             >
-              RESERVE MY ROOM NOW
+              BOOK MY SPOT NOW!
             </Button>
           </DialogTrigger>
           

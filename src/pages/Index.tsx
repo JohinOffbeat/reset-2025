@@ -24,7 +24,6 @@ const Index = () => {
         <LifeWheelSection />
         <PackageSection />
         <ProofSection />
-        <HorizonSection />
         <FAQSection />
         <CTAFinalSection />
       </main>

@@ -1,38 +1,61 @@
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRef, useState, useEffect } from "react";
 
 type Testimonial = {
-  src: string;       // video file path
-  poster?: string;   // optional poster image
+  src: string;
   author: string;
   rating: number;
 };
 
 const testimonials: Testimonial[] = [
-  { src: "/videos/aditi.mp4", poster: "/videos/aditi-poster.jpg", author: "Aditi G.", rating: 5 },
-  { src: "/videos/shyam.mp4", poster: "/videos/shyam-poster.jpg", author: "Shyam R.",  rating: 5 },
-  { src: "/videos/priya.mp4", poster: "/videos/priya-poster.jpg", author: "Priya M.",  rating: 5 },
+  {
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689611a664937269a7d0c773.mp4", 
+    author: "Twinkle", 
+    rating: 5 
+  },
+  
+  { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68960defb0a66a13f33d917c.mov", 
+    author: "Khushi", 
+    rating: 5 
+  },
+  { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68960def3b96f72bd2c0a39e.mov", 
+    author: "Ashwani", 
+    rating: 5 
+  },
+  { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689612596493722794d0c823.mov", 
+    author: "Vaishali", 
+    rating: 5 
+  },
+  { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689604974d8e3762dc3fd203.mov", 
+    author: "Dolly & Gwen", 
+    rating: 5 
+  },
 ];
 
 export const ProofSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const nextTestimonial = () =>
+  const nextTestimonial = () => {
+    setIsPlaying(false);
     setCurrentIndex((p) => (p + 1) % testimonials.length);
-  const prevTestimonial = () =>
+  };
+  const prevTestimonial = () => {
+    setIsPlaying(false);
     setCurrentIndex((p) => (p - 1 + testimonials.length) % testimonials.length);
+  };
 
   useEffect(() => {
-    videoRefs.current.forEach((v, i) => {
+    videoRefs.current.forEach((v) => {
       if (!v) return;
-      if (i === currentIndex) {
-        v.pause();
-        v.currentTime = 0; // reset when slide changes
-      } else {
-        v.pause();
-      }
+      v.pause();
+      v.currentTime = 0;
     });
   }, [currentIndex]);
 
@@ -47,22 +70,43 @@ export const ProofSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-card border border-border rounded-2xl p-6 md:p-10">
-            {/* Video (keep width, reduce height on md+) */}
+            {/* Video wrapper */}
             <div className="mx-auto w-full max-w-[420px]">
-              <div className="relative rounded-xl border border-border/70 overflow-hidden shadow-lg">
-                {/* mobile: classic portrait; md+: shorter height */}
-                <div className="aspect-[9/16] md:aspect-[9/14] lg:aspect-[9/12] bg-muted/30">
+              <div className="relative rounded-xl border border-border/70 overflow-hidden shadow-lg aspect-[9/16] md:aspect-[9/14] lg:aspect-[9/12] bg-muted/30">
+                
+                {!isPlaying ? (
+                  <>
+                    <video
+                      className="h-full w-full object-cover"
+                      src={current.src}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      ref={(el) => (videoRefs.current[currentIndex] = el)}
+                      onLoadedMetadata={(e) => {
+                        // pause immediately so it stays as thumbnail
+                        (e.target as HTMLVideoElement).pause();
+                      }}
+                    />
+                    <button
+                      onClick={() => setIsPlaying(true)}
+                      className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/50 transition"
+                    >
+                      <Play className="w-20 h-20 text-accent-glow" />
+                    </button>
+                  </>
+                ) : (
                   <video
                     key={current.src}
                     ref={(el) => (videoRefs.current[currentIndex] = el)}
                     className="h-full w-full object-cover"
                     src={current.src}
-                    poster={current.poster}
                     controls
+                    autoPlay
                     playsInline
                     preload="metadata"
                   />
-                </div>
+                )}
               </div>
             </div>
 
@@ -109,7 +153,10 @@ export const ProofSection = () => {
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
                     index === currentIndex ? "bg-accent scale-110" : "bg-muted"
                   }`}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => {
+                    setIsPlaying(false);
+                    setCurrentIndex(index);
+                  }}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}

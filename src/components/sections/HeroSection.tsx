@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock } from "lucide-react";
+import { Calendar, MapPin, Clock, Play } from "lucide-react";
+import { useState } from "react";
 
 export const HeroSection = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [playVideo, setPlayVideo] = useState(false);
 
   return (
     <section
@@ -48,17 +47,30 @@ export const HeroSection = () => {
             96 hours. One epic identity upgrade. Step out of routine, tear through self-imposed ceilings, and return home on fire.
           </p>
 
-          {/* Video from URL */}
-          <div className="w-full max-w-3xl aspect-video mb-8 rounded-xl overflow-hidden border border-border">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/6895f598f5b3cb22a8236a47.mp4" // <-- replace with your video URL
-              title="Hero video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+          {/* Video with thumbnail */}
+          <div className="w-full max-w-3xl aspect-video mb-8 rounded-xl overflow-hidden border border-border relative">
+            {!playVideo ? (
+              <>
+                <img
+                  src="/Reset.jpg" // <-- replace with your thumbnail image path
+                  alt="RESET 2025 Preview"
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setPlayVideo(true)}
+                  className="absolute inset-0 flex items-center justify-center "
+                >
+                  <Play className="w-20 h-20 text-accent-glow" />
+                </button>
+              </>
+            ) : (
+              <video
+                src="https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/6895f598f5b3cb22a8236a47.mp4"
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
 
           {/* CTA after video */}
