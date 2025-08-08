@@ -53,13 +53,14 @@ export const StickyNav = () => {
           </div>
           
           <Button 
-            variant="ember" 
-            size="sm"
-            onClick={() => scrollToSection('#cta-final')}
-            className="text-xs px-4"
-          >
-            RESERVE
-          </Button>
+  variant="ember" 
+  size="sm"
+  onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
+  className="text-xs px-4"
+>
+  RESERVE
+</Button>
+
         </div>
       </div>
     </nav>

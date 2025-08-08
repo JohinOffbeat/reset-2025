@@ -5,14 +5,13 @@ import { useState } from "react";
 import { CreditCard, Users, Clock } from "lucide-react";
 
 export const CTAFinalSection = () => {
-  const [isAgreed, setIsAgreed] = useState(false);
-  const [roomsLeft] = useState(20); // This would be dynamic from backend
+  const [isAgreed, setIsAgreed] = useState(true); // ✅ Pre-checked
+  const [roomsLeft] = useState(20); // Could be dynamic
 
   const handlePayment = () => {
     if (!isAgreed) return;
-    // Integration with Razorpay would go here
-    console.log("Processing payment...");
-    // Redirect to /thank-you after payment
+    // ✅ Redirect to Razorpay
+    window.open("https://rzp.io/rzp/reset-2025", "_blank");
   };
 
   return (
@@ -84,8 +83,7 @@ export const CTAFinalSection = () => {
               <Button 
                 variant="ember" 
                 className="w-full"
-                disabled={!isAgreed}
-                onClick={handlePayment}
+                onClick={handlePayment} // ✅ Opens Razorpay
               >
                 <CreditCard className="w-4 h-4 mr-2" />
                 Proceed to Payment

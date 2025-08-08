@@ -59,7 +59,7 @@ export const HeroSection = () => {
             variant="ember"
             size="lg"
             className="text-lg px-8 py-6 rounded-full"
-            onClick={() => scrollToSection("cta-final")}
+            onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
           >
             RESERVE MY ROOM
           </Button>
@@ -72,7 +72,7 @@ export const HeroSection = () => {
           variant="ember"
           size="lg"
           className="rounded-full shadow-lg"
-          onClick={() => scrollToSection("cta-final")}
+          onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
         >
           RESERVE MY ROOM
         </Button>
