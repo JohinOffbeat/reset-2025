@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* RESET 2025 Brand Colors */
+    --background: 0 0% 0%;           /* Rich black */
+    --foreground: 0 0% 100%;         /* Clean white */
+
+    --card: 0 0% 4%;                 /* Slightly lighter black for cards */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 0%;              /* Rich black */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;          /* Clean white */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 15%;               /* Dark gray for muted elements */
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 76% 35%;             /* Deep ember red #B31B1B */
+    --accent-foreground: 0 0% 100%;
+
+    --accent-glow: 18 100% 50%;      /* Glowing orange ember #FF6A00 */
+    --accent-glow-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 76% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Same as light mode for this brand - full black design */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 76% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --accent-glow: 18 100% 50%;
+    --accent-glow-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 76% 35%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  /* Custom font classes */
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  .font-subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  /* Ember glow effect */
+  .ember-glow {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    box-shadow: 0 0 20px hsl(var(--accent-glow) / 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .ember-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--accent-glow) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Section fade-in animation */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hero overlay */
+  .hero-overlay {
+    background: linear-gradient(90deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--background)) 60%, 
+      transparent 100%);
+  }
+}
