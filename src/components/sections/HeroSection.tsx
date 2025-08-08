@@ -80,7 +80,7 @@ export const HeroSection = () => {
             className="text-lg px-8 py-6 rounded-full"
             onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
           >
-            RESERVE MY ROOM
+            BOOK MY SPOT NOW!
           </Button>
         </div>
       </div>
@@ -93,7 +93,7 @@ export const HeroSection = () => {
           className="rounded-full shadow-lg"
           onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
         >
-          RESERVE MY ROOM
+          BOOK MY SPOT NOW!
         </Button>
       </div>
     </section>

@@ -29,7 +29,7 @@ export const FooterSection = () => {
             <img
               src="/sign.png"
               alt="Swastik Nandakumar Signature"
-              className="h-28 w-auto object-contain"
+              className="h-36 w-auto object-contain"
             />
             <p className="text-base md:text-lg text-muted-foreground">
               Peak Performance Coach

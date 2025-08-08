@@ -7,8 +7,8 @@ import {
 
 const faqs = [
   {
-    question: "Can I get a single room?",
-    answer: "No. Shared energy is part of the process, and rooms are limited."
+    question: "How will the rooms be assigned to me?",
+    answer: "Rooms will be assigned on a Twin - Sharing basis. Which means you will be sharing a room with another awesome Reset attendee. Shared energy, and connection is a part of the Reset process & experience. Also, as rooms are limited, single rooms are not an option."
   },
   {
     question: "How will my roommate be chosen?",
@@ -19,8 +19,8 @@ const faqs = [
     answer: "Book two seats (₹ 20k + GST each) and we'll room you together."
   },
   {
-    question: "Under-14 kids?",
-    answer: "This immersion isn't designed for children."
+    question: "Can my kids attend Reset as well?",
+    answer: "We love kids learning early in their life definitely. But this event is going to be an intense event, and some immersion isn't designed for young kids. 14+ Year olds can definitely be a part of Reset. You can purchase a ticket for them. This event will NOT BE SUITABLE for kids younger than 14."
   },
   {
     question: "Is the fee refundable?",

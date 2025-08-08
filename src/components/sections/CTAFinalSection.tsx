@@ -47,7 +47,7 @@ export const CTAFinalSection = () => {
               className="text-xl px-12 py-8 rounded-full"
               onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
             >
-              RESERVE MY ROOM NOW
+              BOOK MY SPOT NOW!
             </Button>
           </DialogTrigger>
           

@@ -58,7 +58,7 @@ export const StickyNav = () => {
   onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
   className="text-xs px-4"
 >
-  RESERVE
+  BOOK MY SPOT NOW!
 </Button>
 
         </div>
