@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, Calendar, MapPin, Clock } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 
 export const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -48,10 +48,17 @@ export const HeroSection = () => {
             96 hours. One epic identity upgrade. Step out of routine, tear through self-imposed ceilings, and return home on fire.
           </p>
 
-          {/* Video under text */}
-          <div className="w-full max-w-3xl aspect-video bg-muted/40 rounded-xl flex items-center justify-center border border-border mb-8">
-            <Play className="w-16 h-16 text-accent-glow" />
-            <span className="sr-only">Hero video placeholder</span>
+          {/* Video from URL */}
+          <div className="w-full max-w-3xl aspect-video mb-8 rounded-xl overflow-hidden border border-border">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/6895f598f5b3cb22a8236a47.mp4" // <-- replace with your video URL
+              title="Hero video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
 
           {/* CTA after video */}
@@ -66,7 +73,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Sticky CTA (unchanged) */}
+      {/* Sticky CTA */}
       <div className="fixed bottom-6 right-6 z-50 hidden" id="sticky-cta">
         <Button
           variant="ember"
