@@ -45,55 +45,13 @@ export const CTAFinalSection = () => {
               variant="ember" 
               size="lg" 
               className="text-xl px-12 py-8 rounded-full"
+              onClick={() => window.open("https://rzp.io/rzp/reset-2025", "_blank")}
             >
-              BOOK MY SPOT NOW!
+              RESERVE MY ROOM NOW
             </Button>
           </DialogTrigger>
           
-          <DialogContent className="sm:max-w-md bg-card border-border">
-            <DialogHeader>
-              <DialogTitle className="font-heading text-2xl">Reserve Your Room</DialogTitle>
-            </DialogHeader>
-            
-            <div className="space-y-6">
-              <div className="bg-muted/20 p-4 rounded-lg">
-                <h3 className="font-subheading text-lg mb-2">Package Details</h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  3 nights twin-share accommodation + all meals
-                </p>
-                <p className="text-2xl font-bold text-accent">
-                  ₹ 20,000 <span className="text-sm text-muted-foreground">+ 18% GST</span>
-                </p>
-              </div>
-              
-              <div className="flex items-start space-x-2">
-                <Checkbox 
-                  id="terms" 
-                  checked={isAgreed}
-                  onCheckedChange={(checked) => setIsAgreed(checked === true)}
-                />
-                <label 
-                  htmlFor="terms" 
-                  className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
-                >
-                  I understand accommodations are twin-share and the fee is non-refundable.
-                </label>
-              </div>
-              
-              <Button 
-                variant="ember" 
-                className="w-full"
-                onClick={handlePayment} // ✅ Opens Razorpay
-              >
-                <CreditCard className="w-4 h-4 mr-2" />
-                Proceed to Payment
-              </Button>
-              
-              <p className="text-xs text-muted-foreground text-center">
-                Secure payment powered by Razorpay
-              </p>
-            </div>
-          </DialogContent>
+        
         </Dialog>
       </div>
     </section>

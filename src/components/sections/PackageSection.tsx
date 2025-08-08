@@ -13,8 +13,8 @@ const packageItems = [
   },
   {
     icon: Clock,
-    title: "24/7 event production,",
-    description: "4 Day Immersive Experience"
+    title: "4 Day Immersive Experience",
+    description: "Be ready to completely reset yourself"
   },
   {
     icon: Trophy,

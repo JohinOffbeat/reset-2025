@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 type Testimonial = {
   src: string;
+  poster: string; // new field for cover image
   author: string;
   rating: number;
 };
@@ -11,30 +12,46 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689611a664937269a7d0c773.mp4", 
+    poster: "/TWINKLE.jpg",
     author: "Twinkle", 
     rating: 5 
   },
-  
   { 
     src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68960defb0a66a13f33d917c.mov", 
+    poster: "/KHUSHI.jpg",
     author: "Khushi", 
     rating: 5 
   },
   { 
     src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68960def3b96f72bd2c0a39e.mov", 
+    poster: "/ASHWINI.jpg",
     author: "Ashwani", 
     rating: 5 
   },
   { 
     src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689612596493722794d0c823.mov", 
+    poster: "/Vaishali.jpg",
     author: "Vaishali", 
+    rating: 5 
+  },
+    { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68961620f5b3cb5cc423a8f0.mov", 
+    poster: "/Nevil.jpg",
+    author: "Nevil", 
     rating: 5 
   },
   { 
     src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/689604974d8e3762dc3fd203.mov", 
+    poster: "/Dolly & Gwen.jpg",
     author: "Dolly & Gwen", 
     rating: 5 
   },
+  { 
+    src: "https://storage.googleapis.com/msgsndr/TK1Z7jFRpKG9k0DcMMmc/media/68961620d66e1efd313c9646.mp4", 
+    poster: "/Lipi Sharma.jpg",
+    author: "Lipi", 
+    rating: 5 
+  }
 ];
 
 export const ProofSection = () => {
@@ -70,23 +87,16 @@ export const ProofSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-card border border-border rounded-2xl p-6 md:p-10">
-            {/* Video wrapper */}
+            {/* Video / Poster wrapper */}
             <div className="mx-auto w-full max-w-[420px]">
               <div className="relative rounded-xl border border-border/70 overflow-hidden shadow-lg aspect-[9/16] md:aspect-[9/14] lg:aspect-[9/12] bg-muted/30">
                 
                 {!isPlaying ? (
                   <>
-                    <video
+                    <img
+                      src={current.poster}
+                      alt={`${current.author} testimonial cover`}
                       className="h-full w-full object-cover"
-                      src={current.src}
-                      muted
-                      playsInline
-                      preload="metadata"
-                      ref={(el) => (videoRefs.current[currentIndex] = el)}
-                      onLoadedMetadata={(e) => {
-                        // pause immediately so it stays as thumbnail
-                        (e.target as HTMLVideoElement).pause();
-                      }}
                     />
                     <button
                       onClick={() => setIsPlaying(true)}
