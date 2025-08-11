@@ -11,6 +11,10 @@ const faqs = [
     answer: "Reset 2025 is happening on October 3, 4, 5, 6. [Friday to Monday]. Friday - make sure that you reach the venue by 2:30 PM. Please make sure that you've completed your lunch and you reach Leroy Grand because the Registration and Event will get started right away! Monday - Please book your travel tickets to go back home for after 10:30 PM on 6th October (Monday"
   },
   {
+    question: "What all do I get when I purchase my Reset Ticket?",
+    answer: "Reset 2025 is a 4 Day Immersive Residential Event. Your Reset Ticket of Rs. 20,000 includes all these amazing things!Your Stay automatically booked for 3 nights! [Friday night to Monday morning]Your Reset All Access pass! Your Meals all the way from Friday Dinner to Monday Lunch!"
+  },
+  {
     question: "How will the rooms be assigned to me?",
     answer: "Rooms will be assigned on a Twin - Sharing basis. Which means you will be sharing a room with another awesome Reset attendee. Shared energy, and connection is a part of the Reset process & experience. Also, as rooms are limited, single rooms are not an option."
   },
