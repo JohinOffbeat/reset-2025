@@ -6,7 +6,7 @@ import { CreditCard, Users, Clock } from "lucide-react";
 
 export const CTAFinalSection = () => {
   const [isAgreed, setIsAgreed] = useState(true); // ✅ Pre-checked
-  const [roomsLeft] = useState(20); // Could be dynamic
+  const [roomsLeft] = useState(10); // Could be dynamic
 
   const handlePayment = () => {
     if (!isAgreed) return;
@@ -35,7 +35,7 @@ export const CTAFinalSection = () => {
         </div>
         
         <p className="text-xl mb-12 text-muted-foreground">
-          <span className="line-through">20 rooms</span> → <span className="text-accent-glow font-bold">{roomsLeft}</span>. 
+          <span className="line-through">40 rooms</span> → <span className="text-accent-glow font-bold">{roomsLeft}</span>. 
           Secure yours before someone else does.
         </p>
         
